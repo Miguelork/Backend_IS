@@ -18,7 +18,7 @@ class Todo {
         let todoItem = new Todo({
             title: req.body.title
         });
-        todoItem.save().then(doc => {
+        todoItem.save().then(docs => {
             res.json({
                 ok: true
             })
