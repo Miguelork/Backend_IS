@@ -11,7 +11,7 @@ class Todo {
     }
 
     hello(req, res) {
-        res.json("Hola mundo")
+        res.json("Servidor funcionando!")
     }
 
     newToDo(req, res) {

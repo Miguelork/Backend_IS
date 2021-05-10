@@ -12,7 +12,7 @@ class App {
         this.routes()
 
         this.app.listen(process.env.PORT, function() {
-            console.log("Servidor trabajando en puerto 3000")
+            console.log("Servidor trabajando")
         });
 
     }
