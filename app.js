@@ -11,14 +11,14 @@ class App {
 
         this.routes()
 
-        this.app.listen(process.env.PORT, function() {
+        this.app.listen(3000, function() {
             console.log("Servidor trabajando")
         });
 
     }
 
     routes() {
-        this.app.use(require('./routes/todo'))
+        this.app.use(require('./routes/UsuarioRoutes'))
     }
 
     database() {
