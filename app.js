@@ -11,7 +11,7 @@ class App {
 
         this.routes()
 
-        this.app.listen(3000, function() {
+        this.app.listen(process.env.PORT || 3000, function() {
             console.log("Servidor trabajando")
         });
 
