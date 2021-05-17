@@ -4,7 +4,7 @@ const UsuarioModel = require('../models/UsuarioModel');
 class Usuario {
     constructor() {
         this.app = express()
-
+        // Ejemplo de la Rutas this.app.<Metodo>('<Ruta>', <Metodo>)
         this.app.post('/crearUsuario', this.crearUsuario)
         this.app.get('/listaUsuario', this.listaUsuario)
         this.app.put('/modificarUsuario', this.modificarUsuario)
@@ -58,7 +58,6 @@ class Usuario {
             })
         })
     }
-
 
 }
 
