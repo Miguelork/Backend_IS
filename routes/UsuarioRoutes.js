@@ -11,12 +11,19 @@ class Usuario {
     }
 
     crearUsuario(req, res) {
+        console.log(req.body.tipo);
         let UsuarioItem = UsuarioModel({
+            tipo: req.body.tipo,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
-            email: req.body.email,
+            user: req.body.user,
+            password: req.body.password,
             telefono: req.body.telefono,
-            direccion: req.body.direccion
+            email: req.body.email,
+            direccion: req.body.direccion,
+            especialidades: req.body.especialidades,
+            horaIncial: req.body.horaIncial,
+            horaFinal: req.body.horaFinal
         });
         UsuarioItem.save().then(doc => {
             res.json({
