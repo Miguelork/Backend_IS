@@ -11,6 +11,11 @@ class App {
         this.app.use(cors());
         // Manipular los objetos json
         this.app.use(require('body-parser').json())
+        this.app.use(function(req, res, next) {
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+            next();
+          });
         // Llama a la función para conectarse a la DB
         this.database()
         // Función de la rutas
