@@ -11,7 +11,6 @@ class Usuario {
     }
 
     crearUsuario(req, res) {
-        console.log(req.body.tipo);
         let UsuarioItem = UsuarioModel({
             tipo: req.body.tipo,
             nombre: req.body.nombre,
