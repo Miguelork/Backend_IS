@@ -40,7 +40,10 @@ let UsusarioSchema = new Schema({
     },
     horaFinal: {
         type: String
-    }
+    },
+    aprobado: {
+        type: Boolean
+    },
 })
 
 module.exports = mongoose.model('Usuarios', UsusarioSchema);
