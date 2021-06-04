@@ -7,7 +7,8 @@ class Usuario {
         // Ejemplo de la Rutas this.app.<Metodo>('<Ruta>', <Metodo>)
         this.app.post('/crearUsuario', this.crearUsuario)
         this.app.get('/listaUsuario', this.listaUsuario)
-        this.app.put('/modificarUsuario', this.modificarUsuario)
+        this.app.post('/modificarUsuario', this.modificarUsuario)
+        this.app.post('/cambiarClaveUsuario', this.cambiarClaveUsuario)
     }
 
     crearUsuario(req, res) {
@@ -17,11 +18,13 @@ class Usuario {
             apellido: req.body.apellido,
             user: req.body.user,
             password: req.body.password,
+            nacimiento: req.body.nacimiento,
+            sexo: req.body.sexo,
             telefono: req.body.telefono,
             email: req.body.email,
             direccion: req.body.direccion,
             especialidades: req.body.especialidades,
-            horaIncial: req.body.horaIncial,
+            horaInicial: req.body.horaInicial,
             horaFinal: req.body.horaFinal
         });
         UsuarioItem.save().then(doc => {
@@ -49,11 +52,19 @@ class Usuario {
 
     modificarUsuario(req, res) {
         UsuarioModel.updateOne({ _id: req.body.id }, {
+            tipo: req.body.tipo,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
-            email: req.body.email,
+            user: req.body.user,
+            password: req.body.password,
+            nacimiento: req.body.nacimiento,
+            sexo: req.body.sexo,
             telefono: req.body.telefono,
-            direccion: req.body.direccion
+            email: req.body.email,
+            direccion: req.body.direccion,
+            especialidades: req.body.especialidades,
+            horaInicial: req.body.horaInicial,
+            horaFinal: req.body.horaFinal
         }).then(docs => {
             res.json({
                 ok: true
@@ -64,6 +75,20 @@ class Usuario {
             })
         })
     }
+
+    cambiarClaveUsuario(req, res) {
+        UsuarioModel.updateOne({ _id: req.body.id }, {
+            password: req.body.password
+        }).then(docs => {
+            res.json({
+                ok: true
+            })
+        }, err => {
+            res.status(500).json({
+                error: 'Error:' + err
+            })
+        })
+    }    
 
 }
 

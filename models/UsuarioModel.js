@@ -17,6 +17,12 @@ let UsusarioSchema = new Schema({
     password: {
         type: String
     },
+    nacimiento: {
+        type: String
+    },
+    sexo: {
+        type: String
+    },    
     telefono: {
         type: String
     },
@@ -29,7 +35,7 @@ let UsusarioSchema = new Schema({
     especialidades: {
         type: String
     },
-    horaIncial: {
+    horaInicial: {
         type: String
     },
     horaFinal: {
