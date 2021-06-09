@@ -24,6 +24,8 @@ class App {
     // Rutas
     routes() {
         this.app.use(require('./routes/UsuarioRoutes'))
+        this.app.use(require('./routes/PreguntaRoutes'))
+        this.app.use(require('./routes/RespuestaRoutes'))
     }
 
     // Conectar con la DB
