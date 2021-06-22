@@ -26,7 +26,8 @@ class Usuario {
             especialidades: req.body.especialidades,
             horaInicial: req.body.horaInicial,
             horaFinal: req.body.horaFinal,
-            aprobado: req.body.aprobado
+            aprobado: req.body.aprobado,
+            monto: req.body.monto
         });
         UsuarioItem.save().then(doc => {
             res.json({
@@ -66,7 +67,8 @@ class Usuario {
             especialidades: req.body.especialidades,
             horaInicial: req.body.horaInicial,
             horaFinal: req.body.horaFinal,
-            aprobado: req.body.aprobado
+            aprobado: req.body.aprobado,
+            monto: req.body.monto
         }).then(docs => {
             res.json({
                 ok: true

@@ -44,6 +44,9 @@ let UsusarioSchema = new Schema({
     aprobado: {
         type: Boolean
     },
+    monto: {
+        type: String
+    },
 })
 
 module.exports = mongoose.model('Usuarios', UsusarioSchema);
