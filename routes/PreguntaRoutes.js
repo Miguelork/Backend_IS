@@ -8,7 +8,7 @@ class Pregunta {
         this.app.post('/crearPregunta', this.crearPregunta)
         this.app.get('/listaPregunta', this.listaPregunta)
         this.app.post('/modificarPregunta', this.modificarPregunta)
-        this.app.delete('/eliminarPregunta', this.eliminarPregunta)
+        this.app.post('/eliminarPregunta', this.eliminarPregunta)
     }
 
     crearPregunta(req, res) {
